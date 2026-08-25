@@ -1,0 +1,20 @@
+model_config:
+  model: "mercury//mercury"
+  type: CHAT
+  conv_template: "mercury-instruct"
+
+  remasking: "low_confidence"
+
+  gen_length: 50
+  top_p: 1.0
+
+key: null
+dry_run: false
+
+hydra:
+  job:
+    chdir: false
+  
+  callbacks:
+    save_job_info:
+      _target_: hydra.experimental.callbacks.PickleJobInfoCallback

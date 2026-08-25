@@ -1,0 +1,24 @@
+model_config:
+  model: "llada//llada_moe"
+  model_path: "/data1/ybshi/LLaDA-MoE-7B-A1B-Instruct" # change to your path for llada_moe
+  type: CHAT
+  conv_template: "llada-instruct"
+
+  gen_function: "file:generate_functions/generate_llada_moe.py:generate"
+  remasking: "low_confidence"
+  add_role: "user"
+
+
+  model_loader: HF
+  torch_dtype: BFLOAT16
+
+key: null
+dry_run: false
+
+hydra:
+  job:
+    chdir: false
+  
+  callbacks:
+    save_job_info:
+      _target_: hydra.experimental.callbacks.PickleJobInfoCallback

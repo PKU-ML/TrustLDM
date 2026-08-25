@@ -1,0 +1,11 @@
+scenario_name: jbb
+
+data_file: ./data/safety/Safety_JBB-Behaviors.json
+out_file: null # will define by the code
+max_tokens: 256 
+seed: 1
+t: 1 # temperature
+n: 1  # number of generation per API call
+
+context_type: ["completed", "safe", "fraud"]
+openai_api_key: null # will define by INPUT

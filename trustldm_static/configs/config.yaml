@@ -1,0 +1,10 @@
+key: null
+dry_run: false
+
+hydra:
+  job:
+    chdir: false
+
+  callbacks:
+    save_job_info:
+      _target_: hydra.experimental.callbacks.PickleJobInfoCallback

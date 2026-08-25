@@ -1,0 +1,13 @@
+model: "llada/"
+model_path: "/home1/ybshi/LLaDA-8B-Base"
+type: CHAT
+conv_template: "llada-base"
+
+gen_function: "file:/home1/ybshi/LLaDA-main/generate.py:generate"
+
+model_loader: HF
+torch_dtype: BFLOAT16
+quant_file: null
+tokenizer_name: null
+trust_remote_code: true
+use_auth_token: true

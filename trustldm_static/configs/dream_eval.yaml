@@ -1,0 +1,23 @@
+model_config:
+  model: "dream//dream_v0_instruct_7b"
+  model_path: "/data1/ybshi/Dream-v0-Instruct-7B" # change to your path for dream_v0_instruct_7b
+  type: CHAT
+  conv_template: "llada-instruct"
+
+  gen_function: "file:generate_functions/generate_dream.py:diffusion_generate"
+  remasking: "maskgit_plus"
+
+
+  model_loader: HF
+  torch_dtype: BFLOAT16
+
+key: null
+dry_run: false
+
+hydra:
+  job:
+    chdir: false
+  
+  callbacks:
+    save_job_info:
+      _target_: hydra.experimental.callbacks.PickleJobInfoCallback
